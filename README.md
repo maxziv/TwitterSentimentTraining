@@ -15,6 +15,6 @@ http://alias-i.com/lingpipe/demos/tutorial/sentiment/read-me.html
 
 To run Fetcher:
 
-<code> java -jar TwitterFetcher.jar <resume_count> </code>
+<code> java -jar TwitterFetcher.jar 20</code>
 
 
