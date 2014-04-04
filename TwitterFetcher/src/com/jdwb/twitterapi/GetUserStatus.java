@@ -15,11 +15,7 @@ public class GetUserStatus {
 	public static void main(String[] args) {
 		
 		Twitter twitter = new TwitterFactory().getInstance();
-        
-		//	My Applications Consumer and Auth Access Token
-        twitter.setOAuthConsumer("sOErI5F8MWwWtLXzJcZMEXvSY", "f47RlqjTPOEXZMJEEIq9talRsC9YApj12ZbezQbAcc5seb2bta");
-        twitter.setOAuthAccessToken(new AccessToken("1143685122-DLI0xqwVIwhu8AxaWuqiMELggfheJo1paxwnlJz", "L8Yg1UTslxivsRfDvam7awrZDLM4PxX7WkwLulX6S0FzM"));
-        
+      
         try {
         	
         	ResponseList<Status> a = twitter.getUserTimeline(new Paging(1,5));

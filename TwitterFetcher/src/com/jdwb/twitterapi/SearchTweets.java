@@ -83,10 +83,17 @@ public class SearchTweets {
 		BufferedReader br = null;
 		String line = "", cvsSplitBy = ",", searchTerm = null, attitude = null, 
 				statusId = null, tweetText = null, folder = null, tts = "tweet_training_set/";
-		int count = 0;
+		int count = 0, resumeCount = 0;
+		if(args.length!=0)
+			resumeCount = Integer.parseInt(args[0]);
 		try {
 			br = new BufferedReader(new FileReader(csvFile));
 			while ((line = br.readLine()) != null) {
+				if(resumeCount-- > 0)
+				{
+					count++;
+					continue;
+				}
 				// use comma as separator
 				String[] result = line.split(cvsSplitBy);
 				searchTerm = result[0].replaceAll("\"", "");
