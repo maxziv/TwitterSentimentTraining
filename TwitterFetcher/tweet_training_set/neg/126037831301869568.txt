@@ -1,0 +1,1 @@
+Apparently fuzzball crashes on #iOS5. Congratulations @apple on another incompatible upgrade
