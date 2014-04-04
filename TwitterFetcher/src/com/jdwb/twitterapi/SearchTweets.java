@@ -75,6 +75,7 @@ public class SearchTweets {
 		}
 		return tweet;
 	}
+	
 	public static void main(String[] args) throws InterruptedException {
 
 		SearchTweets searchObj = new SearchTweets();
@@ -82,10 +83,10 @@ public class SearchTweets {
 		BufferedReader br = null;
 		String line = "", cvsSplitBy = ",", searchTerm = null, attitude = null, 
 				statusId = null, tweetText = null, folder = null, tts = "tweet_training_set/";
-		int i = 0;
+		int count = 0;
 		try {
 			br = new BufferedReader(new FileReader(csvFile));
-			while ((line = br.readLine()) != null && i != 1) {
+			while ((line = br.readLine()) != null) {
 				// use comma as separator
 				String[] result = line.split(cvsSplitBy);
 				searchTerm = result[0].replaceAll("\"", "");
@@ -114,9 +115,10 @@ public class SearchTweets {
 					bw.write(tweetText);
 					bw.close();
 				}
-				
+				System.out.println("--> downloading tweet #"+statusId + " ("+ count + " of 5513) (" + (5513.0-count)* 28.0/60.0/60.0 + " hrs left)," +
+						" pausing 28 sec to obey Twitter API rate limits");
 				Thread.sleep(28000);
-				//				i = 1;
+				count++;
 
 			}
 		} catch (FileNotFoundException e) {
