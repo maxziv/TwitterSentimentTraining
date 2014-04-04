@@ -12,3 +12,9 @@ http://www.sananalytics.com/lab/twitter-sentiment/
 Apply these labeled tweets on LingPipe Sentiment analysis (polarity basic code) for our mood on incoming tweets data.
 http://alias-i.com/lingpipe/demos/tutorial/sentiment/read-me.html
 
+
+To run Fetcher:
+
+<code> java -jar TwitterFetcher.jar <resume_count> </code>
+
+
