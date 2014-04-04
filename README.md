@@ -1,6 +1,8 @@
 TwitterSentimentTraining
 ========================
 @Author Maxwell Zhou (maxziv)
+
+
 This is the Java analysis tool for Tweet2Dowjones Project:
 https://github.com/tedsunnyday/Tweet2DowJones
 
