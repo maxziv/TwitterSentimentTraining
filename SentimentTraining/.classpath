@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/Users/maxzhou/Dev/lingpipe-4.1.0/lingpipe-4.1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/maxzhou/Dev/lingpipe-4.1.0/demos/tutorial/sentiment/sentimentDemo.jar"/>
+	<classpathentry kind="lib" path="/Users/maxzhou/Downloads/pic/lombok.jar"/>
+	<classpathentry kind="lib" path="/Users/maxzhou/Dev/google-gson-2.2.4/gson-2.2.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
