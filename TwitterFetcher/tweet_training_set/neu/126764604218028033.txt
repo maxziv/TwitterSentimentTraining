@@ -1,0 +1,1 @@
+1st public test release for the Roslyn project. http://t.co/0j9ly9Y8 giving APIs to the C# compiler (and visual basic but ..;). #microsoft

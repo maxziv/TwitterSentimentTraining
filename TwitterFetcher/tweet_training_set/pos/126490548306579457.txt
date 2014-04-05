@@ -1,0 +1,1 @@
+New contact app builds on a magazine style layout and aggregates contact info from multiple sources. Very slick. #Google #Android #ICS

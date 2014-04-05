@@ -1,0 +1,1 @@
+Thanks to Steffen Krause #Microsoft for a great SQL Server Session @EuropeanSP.

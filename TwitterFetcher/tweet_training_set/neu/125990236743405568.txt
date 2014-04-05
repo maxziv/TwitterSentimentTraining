@@ -1,0 +1,1 @@
+@Twitter returns a Error 500 when we try to post the link to @Apple Support Community detailing how to turn off auto renewal subscriptions.

@@ -1,0 +1,1 @@
+#ios5 getting sloppy @apple. U need to check your QA team. Too many issues with apps, data and syncing

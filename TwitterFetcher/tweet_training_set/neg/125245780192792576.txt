@@ -1,0 +1,1 @@
+@apple, #siri can't connect to the network -- it's LESS useful that VoiceControl now... :(

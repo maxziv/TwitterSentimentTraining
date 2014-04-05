@@ -1,0 +1,1 @@
+#SEO Tip:Meta nofollowed or robots.txt blocked pages DO receive pagerank juice when they get links. #google

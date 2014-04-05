@@ -1,0 +1,1 @@
+@Apple, #iOS5 on iPhone2 causes Camera apperature dilation problems & freeze.

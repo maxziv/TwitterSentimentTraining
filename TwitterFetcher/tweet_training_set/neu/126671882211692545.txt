@@ -1,0 +1,1 @@
+#Microsoft Service Pack installer want's my notebook to be plugged in. Why? Plugged it in to start installation and plugged it out. Worked.
