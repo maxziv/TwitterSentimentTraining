@@ -28,9 +28,9 @@ public class JsonToJava {
 			String encoding = con.getContentEncoding();
 			
 			tweet = new Gson().fromJson(new InputStreamReader(in, "UTF-8"), Tweet[].class);
-			System.out.println(tweet[0].getText());
-			
-			
+			//System.out.println(tweet[0].getText());
+//			tweet[0].setClassification("pos");
+//			System.out.println(new Gson().toJson(tweet[0]));
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

@@ -17,6 +17,8 @@ public class Tweet {
 	@Getter @Setter private String geo;
 	@Getter @Setter private String searchGeo;
 	@Getter @Setter private int favorite_count;
+	@Getter @Setter private String classification;
+	
 	
 	
 }
