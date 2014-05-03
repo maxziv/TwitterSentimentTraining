@@ -1,0 +1,1 @@
+So what #twitter needs is a "save tweet" text function. So I could "st @xyz 5" to save the 5th most recent msg on twitter site to read later

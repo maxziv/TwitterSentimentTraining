@@ -1,0 +1,1 @@
+#IOS5  needed to include a landscape mode for reminders @Apple

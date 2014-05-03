@@ -1,0 +1,1 @@
+#twitter app also doesn't show me the conversation when I touch a tweet.

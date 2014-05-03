@@ -1,0 +1,1 @@
+Validated that #Microsoft #iSCSI target in Win Server 8 works fine with #VMware #vSphere5 / ESXi5, no errors - more: http://t.co/6qnLWFt7

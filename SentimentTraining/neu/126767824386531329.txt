@@ -1,0 +1,1 @@
+.. downloading CTP3 of #Microsoft #SQL2012 to play around ...http://www.microsoft.com/sqlserver/en/us/default.aspx

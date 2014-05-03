@@ -1,0 +1,1 @@
+rilasciata la CTP di Roslyn, l'API "compiler as a service" per C# e VB http://t.co/EfGDBBUW #microsoft #roslyn #ctp

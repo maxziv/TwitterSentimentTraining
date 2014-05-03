@@ -1,0 +1,1 @@
+@apple: Multiple times siri is "having trouble connecting to the network."  Siri needs servers (and some exercise!)

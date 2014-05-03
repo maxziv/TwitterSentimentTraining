@@ -1,0 +1,1 @@
+New #iOS5 notification center is a big improvement, but @apple missed an easy trick by not making it fully available on lock screen.

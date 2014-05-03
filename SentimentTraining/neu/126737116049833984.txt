@@ -1,0 +1,1 @@
+i see the #microsoft #lync 64-bit installer still tries to install to C:\Program Files (x86)

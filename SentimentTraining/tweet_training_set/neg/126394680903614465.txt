@@ -1,0 +1,1 @@
+@paulens It surprises me that @Apple throws up an error alert about authorizing, and there's no "Authorize this computer" button.
