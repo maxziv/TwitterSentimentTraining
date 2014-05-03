@@ -6,7 +6,7 @@ import lombok.Setter;
 
 public class Tweet {
 	
-	@Getter @Setter private long id;
+	//@Getter @Setter private long id;
 	@Getter @Setter private String text;
 	@Getter @Setter private String created_at;
 	@Getter @Setter private Boolean processed;

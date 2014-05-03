@@ -79,7 +79,7 @@ public class AmazonS3Handler {
         System.out.println("===========================================\n");
     }
     
-    public void putObject(File file) throws IOException
+    public void putObject(File file, String key) throws IOException
     {
     	try {
 //          System.out.println("Creating bucket " + bucketName + "\n");

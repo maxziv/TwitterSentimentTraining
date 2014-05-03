@@ -21,9 +21,13 @@ public class PolarityBasic {
 	DynamicLMClassifier<NGramProcessLM> mClassifier;
 	Tweet tweets[];
 	String folder = "tweet_training_set";
+	String kwidx[] = {"i feel", "i am feeling", "i'm feeling", "i dont feel", "i'm", "Im", "I am", "makes me"};
+	String loc[] = {"LA", "NYC", "CHI", "ATL"};
+	int posCount = 0;
+	int negCount = 0;
 	AmazonS3Handler s3;
 	private PolarityBasic(String[] args) throws IOException {
-		
+
 		File file = new File(folder+"/.DS_Store");
 		file.delete();
 		mPolarityDir = new File(folder);
@@ -35,7 +39,7 @@ public class PolarityBasic {
 			file.delete();
 			System.out.println(e);
 		}
-		int nGram = 8;
+		int nGram = 10;
 		mClassifier 
 		= DynamicLMClassifier
 		.createNGramProcess(mCategories,nGram);
@@ -45,20 +49,21 @@ public class PolarityBasic {
 
 	void run() throws ClassNotFoundException, IOException {
 		train();
-//		evaluateTest();
+		//		evaluateTest();
 		evaluate();
-		s3.putObject(createEmotionFile(tweets));
 		
+
 	}
 
-    private static File createEmotionFile(Tweet[] tweets) throws IOException {
-        File file = File.createTempFile("emotion", ".txt");
-        file.deleteOnExit();
+	private static File createEmotionFile(Tweet[] tweets) throws IOException {
+		File file = File.createTempFile("emotion",".json");
+		file.deleteOnExit();
 
-        Writer writer = new OutputStreamWriter(new FileOutputStream(file));
-        writer.write(new Gson().toJson(tweets));
-        return file;
-    }
+		@SuppressWarnings("resource")
+		Writer writer = new OutputStreamWriter(new FileOutputStream(file));
+		writer.write(new Gson().toJson(tweets));
+		return file;
+	}
 	boolean isTrainingFile(File file) {
 		return file.getName().charAt(10) != '0';  // test on fold 9
 	}
@@ -115,23 +120,34 @@ public class PolarityBasic {
 	}
 
 	void evaluate() throws IOException {
-		tweets = new JsonToJava().jsonToJava();
-		System.out.println("\nEvaluating.");
-		int numTests = 0;
-		int numCorrect = 0;
-		for (int i = 0; i < mCategories.length; ++i) {
-			String category = mCategories[i];
-			File file = new File(mPolarityDir,mCategories[i]);
-			File[] trainFiles = file.listFiles();
-			for (int j = 0; j < tweets.length; ++j) {
+		for(int k = 0; k < 1; k++)
+		{
+			tweets = new JsonToJava().jsonToJava(k);
+			System.out.println("\nEvaluating: "+loc[k]);
+			int numTests = 0;
+			int numCorrect = 0;
+			for (int i = 0; i < mCategories.length; ++i) {
+				String category = mCategories[i];
+				File file = new File(mPolarityDir,mCategories[i]);
+				File[] trainFiles = file.listFiles();
+				for (int j = 0; j < tweets.length; ++j) {
 
-				String text = tweets[j].getText();
-				++numTests;
-				Classification classification
-				= mClassifier.classify(text);
-//				System.out.println(text+":"+classification.bestCategory());
-				tweets[j].setClassification(classification.bestCategory());
+					String text = tweets[j].getText();
+					++numTests;
+					Classification classification
+					= mClassifier.classify(text);
+					String cl = classification.bestCategory();
+					if(cl.equals("pos"))
+						posCount++;
+					else
+						negCount++;
+					//System.out.println(text+":"+ cl);
+					tweets[j].setClassification(cl);
+				}
 			}
+//			s3.putObject(createEmotionFile(tweets), "emotion" + kwidx[k]  + tweets.length+ ".json");
+			s3.putObject(createEmotionFile(tweets), "city" + loc[k] +  tweets.length+ ".json");
+			System.out.println("posCount "+posCount + ", negCount "+negCount);
 		}
 	}
 
