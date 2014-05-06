@@ -6,6 +6,8 @@ TwitterSentimentTraining
 This is the Java analysis tool for Tweet2Dowjones Project:
 https://github.com/tedsunnyday/Tweet2DowJones
 
+You can play around with our results on http://tweet2dowjones.appspot.com/
+
 Retrieving tweet data manually labeled by Niek Sanders.
 http://www.sananalytics.com/lab/twitter-sentiment/
 
